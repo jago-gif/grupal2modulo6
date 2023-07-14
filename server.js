@@ -50,6 +50,10 @@ app.get('/eventos/:id', (req, res) => {
     }
 });
 
+app.all('*', function(req, res){
+  res.status(401).send("Página no encontrada andate a la ruta correcta");
+});
+
 app.listen(port, () => {
     console.log(`Servidor en funcionamiento en  http://localhost:${port}`);
 });
